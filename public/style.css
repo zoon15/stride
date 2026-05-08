@@ -1,0 +1,1247 @@
+/* ---------------------------------
+   YOUR COLOR PALETTE
+   #744577 - Dark purple (buttons)
+   #F0E9B6 - Cream/yellow (card background)
+   #ACCFA3 - Light green
+   #84C5B1 - Teal
+   #2D1A30 - Very dark purple (page background)
+--------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* BACKGROUND IMAGE */
+    background-color: #2D1A30;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    
+    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* =================================
+   MAIN CARD - #F0E9B6 (cream/yellow)
+   ================================= */
+.container {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 3rem 3rem;
+    width: 100%;
+    max-width: 912px;
+    min-height: 490px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* =================================
+   TOP LEFT LOGO SECTION (outside yellow box)
+   ================================= */
+.top-right {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    right: auto;
+    text-align: left;
+    z-index: 2;
+}
+
+.logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #F0E9B6;
+    letter-spacing: 2px;
+}
+
+.grow-tagline {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.7rem;
+    color: #ACCFA3;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* =================================
+   BOTTOM TAGLINE (outside yellow box)
+   ================================= */
+.bottom-tagline {
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+.tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: #ACCFA3;
+    background: rgba(45, 26, 48, 0.6);
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: 40px;
+    backdrop-filter: blur(4px);
+}
+
+/* =================================
+   WELCOME MESSAGE (inside cream box)
+   ================================= */
+.welcome-message {
+    font-family: 'Arsenal', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2D1A30;
+    text-align: center;
+    margin: 1rem 0 1.5rem 0;
+    letter-spacing: 2px;
+}
+
+/* =================================
+   FORM STYLES (for login/signup pages)
+   ================================= */
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #744577;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+input {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #ACCFA3;
+    border-radius: 16px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: white;
+}
+
+input:focus {
+    outline: none;
+    border-color: #84C5B1;
+    box-shadow: 0 0 0 3px rgba(132, 197, 177, 0.2);
+}
+
+/* =================================
+   BUTTON GROUP CONTAINER
+   ================================= */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Welcome message spacing fix */
+.welcome-message {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* =================================
+   LOGIN LINK (for signup page)
+   ================================= */
+.login-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #744577;
+}
+
+.login-link a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #84C5B1;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    color: #ACCFA3;
+}
+
+/* =================================
+   RESPONSIVE (mobile)
+   ================================= */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+    }
+    
+    .welcome-message {
+        font-size: 2rem;
+    }
+    
+    .top-right {
+        top: 20px;
+        left: 20px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .bottom-tagline {
+        bottom: 60px;
+    }
+    
+    .tagline {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        padding: 6px 16px;
+    }
+    
+    input {
+        font-size: 0.9rem;
+    }
+}
+
+/* =================================
+   DASHBOARD PAGE STYLES
+   ================================= */
+
+/* Top Left Logo */
+.top-left {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    right: auto;
+    text-align: left;
+    z-index: 10;
+}
+
+/* Profile Circle - Top Right */
+.profile-circle {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: #744577;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 100;
+    border: 2px solid #F0E9B6;
+}
+
+.profile-circle:hover {
+    background: #5a3368;
+    transform: scale(1.05);
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+    color: #F0E9B6;
+}
+
+/* Profile Dropdown Menu */
+.profile-dropdown {
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    background: #F0E9B6;
+    border-radius: 16px;
+    min-width: 200px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: none;
+    overflow: hidden;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.dropdown-content {
+    padding: 0.5rem 0;
+}
+
+.user-greeting {
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2D1A30;
+    background: #F0E9B6;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #ACCFA3;
+    margin: 0;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #2D1A30;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #ACCFA3;
+}
+
+.logout-btn {
+    color: #744577;
+    font-weight: 600;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 26, 48, 0.8);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #744577;
+}
+
+.close-modal:hover {
+    color: #2D1A30;
+}
+
+.modal-content h3 {
+    font-family: 'Arsenal', sans-serif;
+    font-size: 1.8rem;
+    color: #2D1A30;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.profile-info p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #2D1A30;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ACCFA3;
+}
+
+.profile-info strong {
+    color: #744577;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 40px 100px 40px;
+    min-height: 100vh;
+    position: relative;
+    
+}
+
+/* Greeting Section */
+.greeting-section {
+    margin-bottom: 2rem;
+}
+
+.greeting-message {
+    font-family: 'Arsenal', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #F0E9B6;
+    text-align: left;
+}
+
+/* Bottom Tagline (adjust for dashboard) */
+.dashboard-page .bottom-tagline {
+    bottom: 30px;
+}
+
+/* SPLIT LAYOUT - JOURNAL (400px) + CALENDAR (600px) */
+.split-layout {
+    display: grid;
+    grid-template-columns: 400px 600px;
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 2rem;
+}
+
+/* LEFT SIDE - JOURNAL SECTION */
+.journal-section {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 1.5rem;
+    height: 450px;
+    max-height: 450px;
+    width: 550px;
+    position: relative;
+    left: -80px;   
+    margin-left: -80px;        /* Moves 20px further left */
+    margin-right: auto;            /* Moves left by 20px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* ADD THIS - aligns content to top */
+}
+.journal-card {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.journal-title {
+    font-family: 'Arsenal', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2D1A30;
+    margin-bottom: 1.2rem;
+    text-align: left;
+    margin-top: 0; 
+}
+
+.mood-selector {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+    margin-top: 0;  
+}
+
+.mood-emoji {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mood-emoji:hover {
+    transform: scale(1.1);
+    background: #ACCFA3;
+}
+
+.mood-emoji.selected {
+    background: #744577;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px #ACCFA3;
+}
+
+.journal-input-group {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-top: 0;
+}
+
+.journal-input-group label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #744577;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.journal-input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #ACCFA3;
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    resize: vertical;
+    background: white;
+    min-height: 160px;
+}
+
+.journal-buttons {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.btn-save-journal {
+    flex: 1;
+    background: #744577;
+    color: #F0E9B6;
+    border: none;
+    border-radius: 40px;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-save-journal:hover {
+    background: #5a3368;
+    transform: translateY(-2px);
+}
+
+.btn-view-entries {
+    flex: 1;
+    background: #84C5B1;
+    color: #2D1A30;
+    border: none;
+    border-radius: 40px;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-view-entries:hover {
+    background: #6bb59e;
+    transform: translateY(-2px);
+}
+
+.current-date-info {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: #744577;
+    text-align: left;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+}
+
+/* RIGHT SIDE - CALENDAR SECTION */
+.calendar-section-full {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 1.5rem;
+    min-height: 549px; 
+    width:1000px;    /* ← CHANGED from 550px to 500px */
+    display: flex;
+    flex-direction: column;
+}
+.calendar-section-full .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-section-full .calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calendar-section-full .calendar-nav-btn {
+    background: #744577;
+    color: #F0E9B6;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-section-full .calendar-nav-btn:hover {
+    background: #5a3368;
+    transform: scale(1.05);
+}
+
+.calendar-section-full .calendar-nav h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2D1A30;
+    margin: 0;
+    min-width: 140px;
+    text-align: center;
+}
+
+.calendar-section-full .calendar-controls {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.calendar-section-full .year-select {
+    background: #F0E9B6;
+    border: 1.5px solid #744577;
+    border-radius: 40px;
+    padding: 8px 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #2D1A30;
+    cursor: pointer;
+}
+
+.calendar-section-full .today-btn {
+    background: #ACCFA3;
+    color: #2D1A30;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.calendar-section-full .today-btn:hover {
+    background: #8fbf83;
+    transform: translateY(-2px);
+}
+
+/* Calendar Grid */
+.calendar-section-full .calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-section-full .weekday {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #744577;
+    padding: 0.75rem;
+}
+
+.calendar-section-full .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    flex: 1;
+}
+
+.calendar-section-full .calendar-day {
+    min-height: 90px;
+    background: white;
+    border-radius: 12px;
+    padding: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #ACCFA3;
+}
+
+.calendar-section-full .calendar-day:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: #744577;
+}
+
+.calendar-section-full .calendar-day.other-month {
+    background: rgba(172, 207, 163, 0.3);
+    color: #999;
+}
+
+.calendar-section-full .calendar-day.today {
+    border: 2px solid #744577;
+    background: rgba(116, 69, 119, 0.1);
+}
+
+.calendar-section-full .day-number {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #2D1A30;
+    margin-bottom: 4px;
+}
+
+.calendar-section-full .day-events {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.calendar-section-full .event-item {
+    background: #ACCFA3;
+    border-radius: 6px;
+    padding: 2px 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: #2D1A30;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s;
+}
+
+.calendar-section-full .event-item:hover {
+    background: #744577;
+    color: #F0E9B6;
+}
+
+/* Event Modal */
+.event-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 26, 48, 0.9);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-modal.show {
+    display: flex;
+}
+
+.event-modal-content {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+.close-event-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #744577;
+}
+
+.close-event-modal:hover {
+    color: #2D1A30;
+}
+
+.event-modal-content h3 {
+    font-family: 'Arsenal', sans-serif;
+    font-size: 1.8rem;
+    color: #2D1A30;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.event-form-group {
+    margin-bottom: 1.2rem;
+}
+
+.event-form-group label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #744577;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.event-form-group input[type="text"],
+.event-form-group input[type="date"],
+.event-form-group input[type="time"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #ACCFA3;
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    background: white;
+}
+
+.event-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.event-form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-save-event {
+    flex: 1;
+    background: #744577;
+    color: #F0E9B6;
+    border: none;
+    border-radius: 40px;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-save-event:hover {
+    background: #5a3368;
+    transform: translateY(-2px);
+}
+
+.btn-delete-event {
+    flex: 1;
+    background: #84C5B1;
+    color: #2D1A30;
+    border: none;
+    border-radius: 40px;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-delete-event:hover {
+    background: #6bb59e;
+    transform: translateY(-2px);
+}
+
+/* View Entries Modal */
+.entries-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 26, 48, 0.9);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}
+
+.entries-modal.show {
+    display: flex;
+}
+
+.entries-modal-content {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    max-height: 70vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-entries-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #744577;
+}
+
+.entries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.entry-item {
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #ACCFA3;
+}
+
+.entry-item:hover {
+    transform: translateX(5px);
+    border-color: #744577;
+    background: rgba(172, 207, 163, 0.2);
+}
+
+.entry-date {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #744577;
+    margin-bottom: 0.5rem;
+}
+
+.entry-mood {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.entry-preview {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #2D1A30;
+}
+
+/* Edit Entry Modal */
+.edit-entry-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 26, 48, 0.9);
+    z-index: 250;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-entry-modal.show {
+    display: flex;
+}
+
+.edit-entry-modal-content {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-edit-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #744577;
+}
+
+.edit-entry-date {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #744577;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.edit-mood-selector {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.edit-mood-selector .mood-emoji {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.edit-entry-modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #ACCFA3;
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-update-entry {
+    flex: 1;
+    background: #744577;
+    color: #F0E9B6;
+    border: none;
+    border-radius: 40px;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-delete-entry {
+    flex: 1;
+    background: #84C5B1;
+    color: #2D1A30;
+    border: none;
+    border-radius: 40px;
+    padding: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .journal-section,
+    .calendar-section-full {
+        min-height: auto;
+    }
+    
+    .dashboard-container {
+        padding: 80px 20px 80px 20px;
+    }
+}
+/* =================================
+   LEFT COLUMN WRAPPER
+   ================================= */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* =================================
+   CHECKLIST SECTION STYLES
+   ================================= */
+.checklist-section {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 1.2rem;
+    width: 500px;
+    position: relative;
+    left: -80px;           /* ADD THIS - matches journal section */
+    margin-left: -80px;    /* ADD THIS - matches journal section */
+    margin-right: auto;
+}
+
+.checklist-title {
+    font-family: 'Arsenal', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2D1A30;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.add-task-container {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.task-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid #ACCFA3;
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    background: white;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #744577;
+}
+
+.btn-add-task {
+    background: #744577;
+    color: #F0E9B6;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-add-task:hover {
+    background: #5a3368;
+    transform: translateY(-2px);
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 12px;
+    transition: all 0.2s;
+    border: 1px solid #ACCFA3;
+}
+
+.task-item:hover {
+    border-color: #744577;
+    transform: translateX(3px);
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #744577;
+}
+
+.task-text {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #2D1A30;
+    word-break: break-word;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #744577;
+}
+
+.btn-delete-task {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #84C5B1;
+    transition: all 0.2s;
+    padding: 4px;
+}
+
+.btn-delete-task:hover {
+    color: #744577;
+    transform: scale(1.1);
+}
+
+/* Scrollbar styling for tasks list */
+.tasks-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tasks-list::-webkit-scrollbar-track {
+    background: #ACCFA3;
+    border-radius: 10px;
+}
+
+.tasks-list::-webkit-scrollbar-thumb {
+    background: #744577;
+    border-radius: 10px;
+}
+
+/* Update journal-section to remove fixed height so it adapts */
+.journal-section {
+    background: #F0E9B6;
+    border-radius: 32px;
+    padding: 1.5rem;
+    width: 550px;
+    position: relative;
+    left: -80px;   
+    margin-left: -80px;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Remove fixed height from journal-section */
+.journal-section {
+    height: auto;
+    max-height: none;
+}

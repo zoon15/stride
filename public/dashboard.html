@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stride · Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <!-- TOP LEFT: STRIDE logo -->
+    <div class="top-left">
+        <div class="logo">STRIDE</div>
+        <div class="grow-tagline">grow every day.</div>
+    </div>
+
+    <!-- TOP RIGHT: Profile Circle -->
+    <div class="profile-circle" id="profileCircle">
+        <div class="profile-icon">👤</div>
+    </div>
+
+    <!-- Profile Dropdown Menu -->
+    <div class="profile-dropdown" id="profileDropdown">
+        <div class="dropdown-content">
+            <div class="user-greeting" id="userGreeting">Hello, Guest</div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item" id="viewProfileBtn">View Profile</div>
+            <div class="dropdown-item logout-btn" id="logoutBtn">Logout</div>
+        </div>
+    </div>
+
+    <!-- Profile Modal (for viewing user details) -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Your Profile</h3>
+            <div class="profile-info">
+                <p><strong>Name:</strong> <span id="profileName">-</span></p>
+                <p><strong>Email:</strong> <span id="profileEmail">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="dashboard-container">
+        <div class="greeting-section">
+            <h1 class="greeting-message" id="greetingMessage">Hello, <span id="userName">Guest</span>!</h1>
+        </div>
+
+        <!-- SPLIT LAYOUT: Journal (left) + Calendar (right) -->
+        <div class="split-layout">
+            <!-- LEFT SIDE: Journal + Mood Tracker + Checklist -->
+            <div class="left-column">
+                <!-- Journal Section -->
+                <div class="journal-section">
+                    <div class="journal-card">
+                        <h2 class="journal-title">How do you feel today?</h2>
+                        
+                        <!-- Mood Emojis -->
+                        <div class="mood-selector">
+                            <div class="mood-emoji" data-mood="😞">😞</div>
+                            <div class="mood-emoji" data-mood="😐">😐</div>
+                            <div class="mood-emoji" data-mood="🙂">🙂</div>
+                            <div class="mood-emoji" data-mood="☺️">☺️</div>
+                            <div class="mood-emoji" data-mood="😍">😍</div>
+                        </div>
+                        
+                        <!-- Journal Text Area -->
+                        <div class="journal-input-group">
+                            <label for="journalEntry">Write about your feelings</label>
+                            <textarea id="journalEntry" rows="6" placeholder="Today I felt..."></textarea>
+                        </div>
+                        
+                        <!-- Buttons -->
+                        <div class="journal-buttons">
+                            <button class="btn-save-journal" id="saveJournalBtn">Save Entry</button>
+                            <button class="btn-view-entries" id="viewEntriesBtn">View Previous Entries</button>
+                        </div>
+                        
+                        <!-- Current date display -->
+                        <div class="current-date-info" id="currentDateInfo"></div>
+                    </div>
+                </div>
+
+                <!-- Checklist Section -->
+                <div class="checklist-section">
+                    <h3 class="checklist-title">What's today's plan?</h3>
+                    
+                    <!-- Add Task Input -->
+                    <div class="add-task-container">
+                        <input type="text" id="newTaskInput" class="task-input" placeholder="Add a new task..." maxlength="100">
+                        <button class="btn-add-task" id="addTaskBtn">+ Add Task</button>
+                    </div>
+                    
+                    <!-- Tasks List -->
+                    <div class="tasks-list" id="tasksList">
+                        <!-- Tasks will appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: Calendar (full height) -->
+            <div class="calendar-section-full">
+                <div class="calendar-header">
+                    <div class="calendar-nav">
+                        <button class="calendar-nav-btn" id="prevMonthBtn">‹</button>
+                        <h2 id="currentMonthYear">May 2026</h2>
+                        <button class="calendar-nav-btn" id="nextMonthBtn">›</button>
+                    </div>
+                    <div class="calendar-controls">
+                        <select id="yearSelect" class="year-select"></select>
+                        <button class="today-btn" id="todayBtn">Today</button>
+                    </div>
+                </div>
+                
+                <div class="calendar-weekdays">
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                </div>
+                
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Event Modal -->
+    <div class="event-modal" id="eventModal">
+        <div class="event-modal-content">
+            <span class="close-event-modal">&times;</span>
+            <h3 id="eventModalTitle">Add Event</h3>
+            <form id="eventForm">
+                <div class="event-form-group">
+                    <label for="eventTitle">Event Title</label>
+                    <input type="text" id="eventTitle" placeholder="e.g., Morning Run" required>
+                </div>
+                <div class="event-form-group">
+                    <label for="eventDate">Date</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="event-form-row">
+                    <div class="event-form-group">
+                        <label for="eventStartTime">Start Time</label>
+                        <input type="time" id="eventStartTime">
+                    </div>
+                    <div class="event-form-group">
+                        <label for="eventEndTime">End Time</label>
+                        <input type="time" id="eventEndTime">
+                    </div>
+                </div>
+                <div class="event-form-group">
+                    <label>
+                        <input type="checkbox" id="allDayEvent"> All Day Event
+                    </label>
+                </div>
+                <div class="event-form-buttons">
+                    <button type="submit" class="btn-save-event">Save Event</button>
+                    <button type="button" class="btn-delete-event" id="deleteEventBtn" style="display:none;">Delete Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Previous Entries Modal -->
+    <div class="entries-modal" id="entriesModal">
+        <div class="entries-modal-content">
+            <span class="close-entries-modal">&times;</span>
+            <h3>Your Journal Entries</h3>
+            <div class="entries-list" id="entriesList">
+                <!-- Entries will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Entry Modal -->
+    <div class="edit-entry-modal" id="editEntryModal">
+        <div class="edit-entry-modal-content">
+            <span class="close-edit-modal">&times;</span>
+            <h3>Edit Journal Entry</h3>
+            <div class="edit-entry-date" id="editEntryDate"></div>
+            <div class="edit-mood-selector" id="editMoodSelector">
+                <div class="mood-emoji" data-edit-mood="😞">😞</div>
+                <div class="mood-emoji" data-edit-mood="😐">😐</div>
+                <div class="mood-emoji" data-edit-mood="🙂">🙂</div>
+                <div class="mood-emoji" data-edit-mood="☺️">☺️</div>
+                <div class="mood-emoji" data-edit-mood="😍">😍</div>
+            </div>
+            <textarea id="editJournalText" rows="6" placeholder="Write about your feelings..."></textarea>
+            <div class="edit-buttons">
+                <button class="btn-update-entry" id="updateEntryBtn">Update Entry</button>
+                <button class="btn-delete-entry" id="deleteEntryBtn">Delete Entry</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM TAGLINE -->
+    <div class="bottom-tagline">
+        <div class="tagline">TRACK·GROW·THRIVE</div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
