@@ -13,14 +13,19 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Create MySQL connection pool (better than single connection)
+const mysql = require('mysql2');
+require('dotenv').config();
+
 const pool = mysql.createPool({
-    uri: process.env.MYSQL_PUBLIC_URL,
+    host: process.env.MYSQL_HOST || 'shuttle.proxy.rlwy.net',
+    port: process.env.MYSQL_PORT || 16882,
+    user: process.env.MYSQL_USER || 'root',
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE || 'railway',
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0,
-    enableKeepAlive: true
+    queueLimit: 0
 });
-
 // Test connection
 pool.getConnection((err, connection) => {
     if (err) {
